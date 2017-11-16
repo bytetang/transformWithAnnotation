@@ -1,4 +1,4 @@
-package com.ctrip.ibu.autotrace
+package com.aust.tj.plugin
 
 import com.ctrip.ibu.autotrace.annotation.AutoTrace
 import javassist.ClassPool
@@ -7,7 +7,7 @@ import javassist.CtMethod
 
 import java.lang.annotation.Annotation
 
-public class AutoTraceInject {
+public class AutoInject {
 
     private static ClassPool pool = ClassPool.getDefault()
     private static String injectStr = "System.out.println(\"inject success\" ); ";

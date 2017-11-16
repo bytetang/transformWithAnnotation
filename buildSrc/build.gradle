@@ -1,5 +1,9 @@
 apply plugin: 'groovy'
 
+task buildLabServicesJar(type: Jar) {
+    from files(sourceSets.main.output)   //Was missing/wrong
+}
+
 repositories {
     jcenter()
 }

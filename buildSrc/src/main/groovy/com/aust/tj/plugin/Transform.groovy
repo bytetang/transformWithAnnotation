@@ -1,4 +1,4 @@
-package com.ctrip.ibu.autotrace
+package com.aust.tj.plugin
 
 import com.android.build.api.transform.Context
 import com.android.build.api.transform.DirectoryInput
@@ -15,7 +15,7 @@ import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 
-public class AutoTraceTransform extends Transform {
+public class Transform extends com.android.build.api.transform.Transform {
 
     Project project
 
@@ -24,7 +24,7 @@ public class AutoTraceTransform extends Transform {
         return "tracePoint"
     }
 
-    public AutoTraceTransform(Project project) {
+    public Transform(Project project) {
         this.project = project
     }
 
@@ -51,7 +51,7 @@ public class AutoTraceTransform extends Transform {
             input.directoryInputs.each { DirectoryInput directoryInput ->
                 //文件夹里面包含的是我们手写的类以及R.class、BuildConfig.class以及R$XXX.class等
 //            MyInject.injectDir(directoryInput.file.absolutePath,"com\\hc\\hcplugin")
-                AutoTraceInject.injectDir(directoryInput.file.absolutePath)
+                AutoInject.injectDir(directoryInput.file.absolutePath)
                 // 获取output目录
                 def dest = outputProvider.getContentLocation(directoryInput.name,
                         directoryInput.contentTypes, directoryInput.scopes,

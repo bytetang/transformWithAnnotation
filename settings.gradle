@@ -1,1 +1,2 @@
-include ':app', ':autotracelib', ':buildSrc'
+include ':app', ':autotracelib'
+//        ':buildSrc'
